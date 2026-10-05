@@ -4,7 +4,11 @@ An anime discovery and community app built with **Next.js 15 (App Router), TypeS
 
 Discover what's trending, search thousands of anime, keep a personal watchlist with statuses and scores, write reviews, and chat with other fans in a live discussion on every anime page.
 
-> **Live demo:** _add your Vercel link here_
+**🔗 Live demo: [prasad-aniverse.vercel.app](https://prasad-aniverse.vercel.app/)**
+
+<p align="center">
+  <img src="docs/screenshot-mobile.jpg" alt="AniVerse home page on a phone, dark mode" width="320" />
+</p>
 
 ---
 
