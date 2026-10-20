@@ -2,16 +2,11 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { MenuIcon, SearchIcon } from 'lucide-react'
+import { SearchIcon } from 'lucide-react'
 import { Button } from '@/components/ui/button'
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu'
 import { cn } from '@/lib/utils'
 import { Logo } from './logo'
+import { MobileNav } from './mobile-nav'
 import { ThemeToggle } from './theme-toggle'
 import { UserNav } from './user-nav'
 
@@ -28,26 +23,7 @@ export function SiteHeader() {
   return (
     <header className="bg-background/80 supports-[backdrop-filter]:bg-background/60 sticky top-0 z-40 border-b backdrop-blur">
       <div className="mx-auto flex h-16 max-w-7xl items-center gap-2 px-4 sm:px-6">
-        {/* Mobile menu */}
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Button variant="ghost" size="icon" className="md:hidden" aria-label="Open menu">
-              <MenuIcon />
-            </Button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent align="start" className="w-48">
-            {NAV_LINKS.map((link) => (
-              <DropdownMenuItem key={link.href} asChild>
-                <Link
-                  href={link.href}
-                  className={cn(isActive(link.href) && 'text-primary font-semibold')}
-                >
-                  {link.label}
-                </Link>
-              </DropdownMenuItem>
-            ))}
-          </DropdownMenuContent>
-        </DropdownMenu>
+        <MobileNav links={NAV_LINKS} isActive={isActive} />
 
         <Logo />
 
